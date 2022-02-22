@@ -1,0 +1,20 @@
+{
+  "name": "prisma-test",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "db:migrate": "yarn dlx prisma migrate dev --name init"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.19",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "^8.9.0",
+    "prettier": "^2.5.1",
+    "prisma": "3.9.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.9.2"
+  }
+}
