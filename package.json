@@ -3,7 +3,7 @@
   "scripts": {
     "start": "ts-node src/main.ts",
     "db:migrate": "yarn prisma migrate dev --name init",
-    "db:generate": "yarn pnpify prisma generate"
+    "db:generate": "yarn prisma generate"
   },
   "devDependencies": {
     "@types/node": "^17.0.19",
