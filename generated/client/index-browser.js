@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 const {
   Decimal
-} = require('@prisma/client/runtime/index-browser')
+} = require('./runtime/index-browser')
 
 
 const Prisma = {}

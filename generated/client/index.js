@@ -14,7 +14,7 @@ const {
   join,
   raw,
   Decimal
-} = require('@prisma/client/runtime/index')
+} = require('./runtime/index')
 
 
 const Prisma = {}
@@ -56,11 +56,11 @@ Prisma.AnyNull = 'AnyNull'
 
 const path = require('path')
 
-const { findSync } = require('@prisma/client/runtime')
+const { findSync } = require('./runtime')
 
 const dirname = findSync(process.cwd(), [
-    ".yarn/unplugged/@prisma-client-virtual-0d564064a1/node_modules/.prisma/client",
-    "unplugged/@prisma-client-virtual-0d564064a1/node_modules/.prisma/client",
+    "generated/client",
+    "client",
 ], ['d'], ['d'], 1)[0] || __dirname
 /**
  * Enums
@@ -123,20 +123,21 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/vitorwdson/projects/prisma-test/.yarn/unplugged/@prisma-client-virtual-0d564064a1/node_modules/@prisma/client",
+      "value": "/home/vitorwdson/projects/prisma-test/generated/client",
       "fromEnvVar": null
     },
     "config": {
       "engineType": "library"
     },
     "binaryTargets": [],
-    "previewFeatures": []
+    "previewFeatures": [],
+    "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../../../../.env",
-    "schemaEnvPath": "../../../../../../.env"
+    "rootEnvPath": "../../.env",
+    "schemaEnvPath": "../../.env"
   },
-  "relativePath": "../../../../../../prisma",
+  "relativePath": "../../prisma",
   "clientVersion": "3.9.2",
   "engineVersion": "bcc2ff906db47790ee902e7bbc76d7ffb1893009",
   "datasourceNames": [
@@ -150,7 +151,7 @@ config.dirname = dirname
 
 
 
-const { warnEnvConflicts } = require('@prisma/client/runtime/index')
+const { warnEnvConflicts } = require('./runtime/index')
 
 warnEnvConflicts({
     rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(dirname, config.relativeEnvPaths.rootEnvPath),
@@ -161,6 +162,6 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 path.join(__dirname, 'libquery_engine-debian-openssl-1.1.x.so.node');
-path.join(process.cwd(), './.yarn/unplugged/@prisma-client-virtual-0d564064a1/node_modules/.prisma/client/libquery_engine-debian-openssl-1.1.x.so.node')
+path.join(process.cwd(), './generated/client/libquery_engine-debian-openssl-1.1.x.so.node')
 path.join(__dirname, 'schema.prisma');
-path.join(process.cwd(), './.yarn/unplugged/@prisma-client-virtual-0d564064a1/node_modules/.prisma/client/schema.prisma')
+path.join(process.cwd(), './generated/client/schema.prisma')
